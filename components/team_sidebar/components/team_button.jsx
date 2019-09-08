@@ -85,7 +85,13 @@ export default class TeamButton extends React.Component {
 
         let content = this.props.content;
 
-        if (!content) {
+        if (content) {
+            content = (
+                <div className='team-btn__content'>
+                    {content}
+                </div>
+            );
+        } else if (!content) {
             if (teamIconUrl) {
                 content = (
                     <div className='team-btn__content'>
